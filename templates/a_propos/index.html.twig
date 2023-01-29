@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AProposController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<main class="main-apropos">
+  <div class="container-apopos">
+    <div class="content-apopos">
+      <div class="titre-apropos">
+        <h1>Maroquinerie à Amiens depuis 2023</h1>
+      </div>
+      <div class="content-titre-apropos">
+        <p>L'atelier Tibag voit le jour à Amiens en 2023.</p>
+        <p>Fugiat voluptate sunt culpa reprehenderit ullamco minim 
+          ipsum irure excepteur ea voluptate mollit non laboris.
+          Amet in voluptate ipsum sunt exercitation dolor tempor minim
+          ullamco do do. Minim veniam duis nulla velit occaecat dolore laboris et minim id qui minim.</p>
+      </div>
+    </div>
+      <div class="image-apropos">
+          <img class="img-side-apropos" src="{{ asset('images/sacs-dos-vintage-homme.jpeg')}}" alt="Image sac a propos" />
+      </div>
+  </div>
+</main>
+<footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <p class="p-footer">&copy; Réalisé par Clément Jonckheere </p>
+      </div>
+    </div>
+</footer>
+{% endblock %}

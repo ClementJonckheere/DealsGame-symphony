@@ -26,6 +26,8 @@ WORKDIR /var/www
 
 COPY . .
 
+COPY public/images /var/public/images
+
 RUN composer install \
     && composer dump-autoload
 
