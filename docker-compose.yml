@@ -8,7 +8,9 @@ services:
       dockerfile: Dockerfile
     environment:
       DATABASE_URL: mysql://root:secret@database:3306/symfony_db?serverVersion=mariadb-10.9.4
-      APP_SECRET: changeMe
+      APP_SECRET: 4af3fc3c7e43da2c6928e93391a81cab1aed
+      MAILER_DSN: smtp://:@mailcatcher:1025
+      MESSENGER_TRANSPORT_DSN: doctrine://default
     ports:
       - "8001:80"
     volumes:
@@ -19,6 +21,7 @@ services:
       - ./translations:/var/www/translations
       - ./public/build:/var/www/public/build
       - ./public/images:/var/www/public/images
+      - ./migrations:/var/www/migrations
     depends_on:
       - database
 

@@ -8,14 +8,14 @@
 <main>
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="overlay-image" style="background-image: url('images/carroussel.jpg');">
+      <div class="overlay-image" style="background-image: url('images/carroussel.jpg');" aria-hidden="true">
       </div>
       <div class="carousel-item active">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Tibag</h1>
+            <img class="logo-simplifie" src="{{ asset('images/TIBAG_logo_simplifie.png')}}" alt="Tibag" />
             <p class="text-carousel">Tbag est une entreprise de maroquinerie responsable</p>
-            <p class="text-carousel p-fabrique">Fabrication 100% française</p>
+            <p class="text-carousel">Fabrication 100% française</p>
             <p><a class="btn btn-lg btn-primary" href="/a-propos">Voir plus</a></p>
           </div>
         </div>
@@ -25,9 +25,11 @@
   <div class="container-home">
     <div class="block-content-home">
       <h2 class="titre-block-content-home">Voyage au cœur de la maroquinerie</h2>
-      <p>John Doe crée un atelier de maroquinerie à Amiens en 2023</p>
-      <p>L'atelier rassemble plus 15 artisants, donne vie a de nouvelles lignes de maroquinerie.</p>
-      <p>Avec des matières nobles, durables et locales.</p>
+      <div class="text-homme">
+        <p>John Doe crée un atelier de maroquinerie à Amiens en 2023</p>
+        <p>L'atelier rassemble plus 15 artisants, donne vie a de nouvelles lignes de maroquinerie.</p>
+        <p>Avec des matières nobles, durables et locales.</p>
+      </div>
     </div>
     <div class="image-content-home">
       <img class="picture-block-home" src="{{ asset('images/sac_home_page.jpg')}}" alt="symfony" />
@@ -45,7 +47,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ bag.title }}</h5>
         <p class="card-text">{{ bag.text }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="{{ path('app_a_propos') }}" class="btn btn-primary">Voir plus</a>
       </div>
     </div>
     </div>
@@ -54,11 +56,5 @@
   </div>
   </div>
 </main>
-<footer>
-    <div class="footer-container">
-      <div class="footer-content">
-        <p class="p-footer">&copy; Réalisé par Clément Jonckheere </p>
-      </div>
-    </div>
-</footer>
+
 {% endblock %}

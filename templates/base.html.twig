@@ -11,24 +11,37 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
 <nav class="navbar navbar-expand-lg fixed-top">
-  <a class="navbar-brand" href="{{ path('app_home') }} ">Tibag</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="a-logo" href="{{ path('app_home') }} ">
+  <img class="logo" src="{{ asset('images/TIBAG.png')}}" alt="logo" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" href="{{ path('app_home') }}">Home</a>
-        <a class="nav-item nav-link" href="{{ path('app_a_propos') }}">A propos</a>
-        <a class="nav-item nav-link" href="{{ path('app_produits') }}">Produits</a>
-        <a class="nav-item nav-link" href="{{ path('app_contact') }}">Contact</a>
-    </div>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_home') }} ">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_a_propos') }}">A propos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_produits') }}">Produits</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+      </li>
+    </ul>
   </div>
+
 </nav>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -36,5 +49,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         {% block body %}
         {% endblock %}
+        <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <p class="p-footer">&copy; Réalisé par Clément Jonckheere </p>
+      </div>
+    </div>
+</footer>
     </body>
 </html>

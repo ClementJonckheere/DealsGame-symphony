@@ -15,7 +15,7 @@ class HomeController extends AbstractController
             [
                 'image' => 'sac_femme_rouge.webp',
                 'title' => 'Sac à dos rouge femme',
-                'text' => 'Dolore irure cillum nisi nostrud non. Non nulla adipisicing officia dolor mollit non incididunt ex proident cillum. Anim nulla nostrud Lorem veniam irure consequat exercitation duis.'
+                'text' => 'Dolore irure cillum nisi nostrud non. Non nulla adipisicing officia dolor mollit non incididunt ex proident cillum. Anim nulla nostrud Lorem veniam irure consequat exercitation duis.' 
             ],
             [
                 'image' => 'sac_mixte_cuire.webp',
