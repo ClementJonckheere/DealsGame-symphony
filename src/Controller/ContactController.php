@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
@@ -20,23 +20,25 @@ class ContactController extends AbstractController
         ]);
     }
     #[Route('/contact/submit', name: 'app_contact_submit')]
-    public function handleForm(Request $request, MailerInterface $mailer): Response
+    public function handleForm(Request $request, MailerInterface $mailerInterface): Response
         {
-            $name = $request->request->get('name');
-            $telephone = $request->request->get('telephone');
-            $address = $request->request->get('address');
-            $email = $request->request->get('email');
-            $subject = $request->request->get('subject');
-            $message = $request->request->get('message');
-        
-            $email = (new Email())
-                ->from($email)
-                ->to('your-email@example.com')
+            if ($request->isMethod('POST')) {
+
+                // php bin/console messenger:consume async -vv
+                            
+                $sender = $request->request->get('email');
+                $subject = $request->request->get('subject');
+                $message = $request->request->get('message');
+    
+                $email = (new Email())
+                ->from($sender)
+                ->to('contact@example.com')
                 ->subject($subject)
-                ->text("Name: $name\nEmail: $email\nTelephone: $telephone\nAddress: $address\n\n$message");
-        
-            $mailer->send($email);
-        
-            return new Response('Message envoyé avec succès');
+                ->text($message);
+    
+                $mailerInterface->send($email);
+    
+            }
+            return $this->render('contact/index.html.twig');
         }
 }
