@@ -23,7 +23,7 @@ class ContactController extends AbstractController
     public function handleForm(Request $request, MailerInterface $mailerInterface): Response
         {
             if ($request->isMethod('POST')) {
-
+                dump($request->request);
                 // php bin/console messenger:consume async -vv
                             
                 $sender = $request->request->get('email');
