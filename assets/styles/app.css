@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 body {
-    background-color: #fefefe;
-    font-family: 'Prompt', sans-serif;
+    background-color: #272727;
+    font-family: 'PT Serif', serif;
 }
 
 nav {
-    background-color: #3F826D;
+    background-color: #191818;
 
 }
 
@@ -15,7 +15,7 @@ main {
 }
 
 a {
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 
 p {
@@ -23,15 +23,15 @@ p {
 }
 
 h1 {
-    font-size: 60px !important;
-}
-
-h2 {
     font-size: 40px !important;
 }
 
+h2 {
+    font-size: 25px !important;
+}
+
 h3 {
-    font-size: 32px !important;
+    font-size: 20px !important;
 }
 @media (max-width: 992px) {
   a {
@@ -43,7 +43,7 @@ h3 {
   }
 
   h1 {
-    font-size: 40px !important;
+    font-size: 35px !important;
   }
 
   h2 {
@@ -54,34 +54,37 @@ h3 {
     font-size: 22px !important;
   }
 }
-.btn {
-  background-color: #3F826D !important;
-  border: #3F826D;
-}
-
-.btn:hover {
-  background-color: #0e1b15 !important;
-  border: #0e1b15;
-}
 
 .logo {
-  height: 50px;
+  height: 40px;
   padding-left: 25px;
 }
 
-.logo-simplifie {
-  height: 60px;
-  margin-bottom: 25px;
+.inscription-icon {
+  width: 1.5em;
 }
-
+  .connexion-link {
+      background-color: #FF8D17;
+      border-radius: 5px;
+  }
+    .connexion-link:hover {
+      color: white !important;
+    }
 
 .nav-link {
   color: white !important;
 }
-
-.nav-link:hover {
-  color: black !important;
-  font-weight: bold;
+  .nav-link:hover {
+  color: #FF8D17 !important;
+}
+.btn {
+  background-color: #FF8D17 !important;
+  border: #FF8D17;
+  border-radius: 5px !important;
+}
+.btn:hover {
+  background-color: #F6BA7C !important;
+  border: #F6BA7C;
 }
 
 @media (min-width: 992px) {
@@ -103,34 +106,76 @@ h3 {
   .nav-item {
     margin-left: 0;
 }
-.carousel-caption {
-  text-align: center !important;
-  left: 0 !important;
-  right: 0 !important;
-}
-}
-/************* HOME  *************/
 
-.carousel {
-    margin-bottom: 4rem;
-  }
   .carousel-caption {
-    bottom: 3rem;
+    text-align: center !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+/************** FOOTER ****************/
+
+.copyright {
+  color: white;
+}
+
+.columns-liens-footer {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+}
+  .container-liens-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+    height: 100%;
+  }
+  .footer-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 60%;
+  } 
+    .title-footer-liens {
+      margin-left: 30px;
+    } 
+    .h2-footer-liens, .h2-footer-liens {
+      color: white;
+      font-weight: bold;
+    }
+    .footer-link {
+      text-decoration: none;
+      color: white;
+    }
+
+
+
+
+/******************** HOME  ********************/
+
+  .carousel-caption {
+    bottom: 15rem;
     z-index: 10;
-    font-weight: bold;
   }
   .carousel-item {
-    height: 32rem;
+    height: 50rem;
+    background: linear-gradient( 0deg, rgb(25 24 24) 2%, rgb(25 24 24 / 70%) 25%);
   }
   .carousel-item > img {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
-    height: 32rem;
   }
   .text-carousel {
-    font-size: 25px !important;
+    font-size: 40px !important;
+  }
+
+  .titre-home {
+    color: #FF8D17;
   }
   
   @media (min-width: 40em) {
@@ -140,7 +185,6 @@ h3 {
       line-height: 1.4;
     }
   }
-
 
 .overlay-image {
     position: absolute;
@@ -166,165 +210,80 @@ h3 {
 
   .image-content-home {
     width: 90% !important;
-}
-}
-.container-home {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 50px;
+  }
 }
 
-.block-content-home {
-    width: 40%;
-    text-align: left;
-    padding: 20px;
+.game-pop {
+  background-color: #272727;
+  height: 100vh;
+  margin: 0px 40px;
 }
-
-.titre-block-content-home {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.image-content-home {
-    width: 40%;
-    text-align: right;
-}
-
-.text-homme {
-  text-align: center;
-}
-.picture-block-home {
-    width: 100%;
-    height: auto;
-}
-
-.selection_produits {
-  margin-top: 55px;
-}
-
-.selection_produits .container {
-    padding: 30px;
-  }
-  
-  .selection_produits .card {
-    width: 100%;
-    margin-bottom: 20px;
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .selection_produits .card-img-top {
-    width: 100%;
-    height: auto;
-  }
-  
-  .selection_produits .card-body {
-    padding: 20px;
-  }
-  
-  .selection_produits .card-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .selection_produits .card-text {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .selection_produits .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: #fff;
+  .game-pop-h2 {
+    color: white;
+    margin-top: 40px;
   }
 
-
-/* Footer */
-.footer-container {
-    background-color: #0e1b15;
-    height: 50px;
-}
-    .footer-content {
-        width: 100%;
-    }
-        .p-footer {
-            color: #fefefe;
-            text-align: center;
-        }
-
-
-/************* A PROPOS  *************/
-
-
-.content-titre-apropos {
-    width: 100%;
-}
-
-.selection_produits {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-apropos {
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-/********** Produits ************/
-.main-contact {
-  padding-top: 5vh;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-
-
-.button-produits{
-  color: white;
-  outline: none;
-  width: 110px;
-  height: 45px;
-  margin: 3px;
-}
-
-.button-produits:hover {
-  background-color: #0e1b15;
-  color: white;
-}
-
-.card-produit {
-  display: none;
-  margin-top: 20px;
-  overflow: hidden;
-}
-
-.show {
-  display: block !important;
-  overflow: visible !important;
-}
-
-.title-produits {
-  text-align: center;
-  color: #0e1b15;
-  padding-bottom: 5vh;
-}
-
-.img-side-apropos {
-  width: 70%;
-}
-
-/********** Contact ************/
-
-.container-main {
+.banner-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #191818;
   width: 100%;
-  padding-top: 5vh;
-  padding-bottom: 3vh;
+  height: 30vh;
 }
-.title-contact {
-  text-align: center;
-  color:#0e1b15;
-  padding-bottom: 5vh;
+  .banner-text {
+    color: white;
+    text-align: center;
+    font-size: 20px !important;
+  }
+  .first-text {
+    color: #FF8D17;
+    font-weight:900;
+    font-size: 30px !important;
+  }
+
+
+
+/************* RESELL ************/
+.resell-main {
+  width: 100%;
 }
+.title-resell {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+}
+  .h1-resell {
+    color: white;
+  }
+
+.plus-new-annouces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-new-annouces {
+  background-color: #FF8D17;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 270px;
+}
+  .btn-new-annouces:hover {
+    background-color: #F6BA7C;
+  }
+
+.title-my-announces {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+}
+  .h2-resell {
+    color: white;
+  }
 

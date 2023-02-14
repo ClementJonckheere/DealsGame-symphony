@@ -8,53 +8,32 @@
 <main>
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="overlay-image" style="background-image: url('images/carroussel.jpg');" aria-hidden="true">
-      </div>
+      <div class="overlay-image" style="background-image: url('images/jeux-video.jpeg');" aria-hidden="true"></div>
       <div class="carousel-item active">
         <div class="container">
           <div class="carousel-caption text-start">
-            <img class="logo-simplifie" src="{{ asset('images/TIBAG_logo_simplifie.png')}}" alt="Tibag" />
-            <p class="text-carousel">Tbag est une entreprise de maroquinerie responsable</p>
-            <p class="text-carousel">Fabrication 100% française</p>
-            <p><a class="btn btn-lg btn-primary" href="/a-propos">Voir plus</a></p>
+            <h1 class="titre-home">DealGames</h1>
+            <p class="text-carousel">Revente et échange</p>
+            <p class="text-carousel">de jeux vidéo d'occasion!</p>
+            <p><a class="btn btn-lg btn-primary" href="/a-propos">COMMENCER A VENDRE</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container-home">
-    <div class="block-content-home">
-      <h2 class="titre-block-content-home">Voyage au cœur de la maroquinerie</h2>
-      <div class="text-homme">
-        <p>John Doe crée un atelier de maroquinerie à Amiens en 2023</p>
-        <p>L'atelier rassemble plus 15 artisants, donne vie a de nouvelles lignes de maroquinerie.</p>
-        <p>Avec des matières nobles, durables et locales.</p>
-      </div>
+  <section class="game-pop">
+    <div class="game-pop-title">
+      <h2 class="game-pop-h2">Les jeux les plus populaires</h2>
     </div>
-    <div class="image-content-home">
-      <img class="picture-block-home" src="{{ asset('images/sac_home_page.jpg')}}" alt="symfony" />
+  </section>
+  <section class="banner-home">
+    <div class="banner-content">
+      <p class="banner-text first-text">Mets tes jeux en vente et gagne de l'argent</p>
+      <p class="banner-text">DealGames est un site dédiée 
+        aux jeux vidéo d'occasion vendus par des particuliers. </p>
+      <p class="banner-text">Notre mission ? Rendre plus abordable la consommation de jeux vidéo</p>
     </div>
-  </div>
-    </div>
-  <div class="selection_produits">
-  <div class="container">
-  <div class="row">
-
-    {% for bag in bags %}
-    <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src=" {{ asset('images/'~bag.image) }}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{ bag.title }}</h5>
-        <p class="card-text">{{ bag.text }}</p>
-        <a href="{{ path('app_a_propos') }}" class="btn btn-primary">Voir plus</a>
-      </div>
-    </div>
-    </div>
-    {% endfor %}
-  </div>
-  </div>
-  </div>
+  </section>
 </main>
 
 {% endblock %}
