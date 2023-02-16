@@ -4,4 +4,54 @@
 
 {% block body %}
 
+<main class="add-announces-main">
+    <div class="title-add-announces">
+        <h1 class="h1-add-announces">Nouvelle annonce</h1>
+    </div>
+    <div class="formulaire-add-announces">
+        {{form_start(form)}}
+        <div class="mb-3 row-form-addannounce">
+            <div class="label-form">
+                {{ form_label(form.name, null, {
+                    'label': 'Nom',
+                    'label_attr': {'class': 'form-label'}
+                }) }}
+            </div>
+            <div class="input-form">
+                {{ form_widget(form.name, {'attr': {'class': 'form-input-name'}}) }}
+            </div>
+            <div class="label-form">
+                {{ form_label(form.category, null, {
+                    'label': 'Categorie',
+                    'label_attr': {'class': 'form-label'}
+                }) }}
+            </div>
+            <div class="input-form">
+                {{ form_widget(form.category, {'attr': {'class': 'form-input-category'}}) }}
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="label-form">
+                {{ form_label(form.description, null, {
+                    'label': 'Description',
+                    'label_attr': {'class': 'form-label'}
+                }) }}
+            </div>
+            <div class="input-form">
+                {{ form_widget(form.description, {'attr': {'class': 'form-input-textarea'}}) }}
+            </div>
+                        <div class="label-form">
+                {{ form_label(form.imageFile, null, {
+                    'label': 'imageFile',
+                    'label_attr': {'class': 'form-label'}
+                }) }}
+            </div>
+            <div class="input-form">
+                {{ form_widget(form.imageFile) }}
+            </div>
+        </div>
+        <button class="input-send">Envoyer</button>
+        {{form_end(form)}}
+    </div>
+</main>
 {% endblock %}

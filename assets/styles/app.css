@@ -23,7 +23,7 @@ p {
 }
 
 h1 {
-    font-size: 40px !important;
+    font-size: 35px !important;
 }
 
 h2 {
@@ -116,40 +116,10 @@ h3 {
 
 /************** FOOTER ****************/
 
-.copyright {
-  color: white;
+.title-footer {
+  color: #FF8D17;
 }
 
-.columns-liens-footer {
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  flex-direction: row;
-}
-  .container-liens-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 33.33%;
-    height: 100%;
-  }
-  .footer-item {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    height: 60%;
-  } 
-    .title-footer-liens {
-      margin-left: 30px;
-    } 
-    .h2-footer-liens, .h2-footer-liens {
-      color: white;
-      font-weight: bold;
-    }
-    .footer-link {
-      text-decoration: none;
-      color: white;
-    }
 
 
 
@@ -271,10 +241,15 @@ h3 {
   border: none;
   border-radius: 5px;
   height: 50px;
-  width: 270px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
   .btn-new-annouces:hover {
     background-color: #F6BA7C;
+    color: white;
   }
 
 .title-my-announces {
@@ -287,3 +262,92 @@ h3 {
     color: white;
   }
 
+/******* Add announces *********/
+.add-announces-main {
+  min-height: 70vh;
+}
+.formulaire-add-announces {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-add-announces{
+  align-items: center;
+  display: flex;
+  height: 15vh;
+  margin: 0 40px;
+}
+.h1-add-announces {
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form-input-name {
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color:white;
+  padding: 7px 0;
+  background: transparent;
+  height: 30px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.form-input-category {
+  width: 40%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color:white;
+  padding: 7px 0;
+  background: transparent;
+  height: 30px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.row-form-addannounce {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-form {
+  width: 100%;
+}
+
+.input-send {
+  width: 25%;
+  background-color: #FF8D17;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+}
+
+.input-send:hover {
+  background-color: #F6BA7C;
+}
+
+.form-input-textarea {
+  width: 80%;
+  height: 100px;
+}
+
+#add_annonces_imageFile_file {
+  color: white;
+}
