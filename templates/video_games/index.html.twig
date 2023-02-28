@@ -3,7 +3,26 @@
 {% block title %}Hello VideoGamesController!{% endblock %}
 
 {% block body %}
-
-<h1>Video games</h1>
-
+<main>
+    <div class="title-videogame">
+        <h1 class="h1-videogame">Video games</h1>
+    </div>
+    <section class="section-videogame">
+        <div class="container">
+            <div class="row">
+                {% for announce in announces %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card mb-3">
+                            <img class="card-img-top" src="{{ vich_uploader_asset(announce) | imagine_filter('thumbnail')}}" alt="{{ announce.name }}">
+                            <div class="card-body">
+                                <p class="card-title"> {{ announce.name }}</p>
+                                <p class="card-text"><small class="text-muted">il y a 3 mois</small></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock %}

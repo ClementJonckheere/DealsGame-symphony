@@ -15,48 +15,41 @@ main {
 }
 
 a {
-    font-size: 18px !important;
+    font-size: 13px !important;
 }
 
 p {
-    font-size: 18px !important;
+    font-size: 15px !important;
 }
 
 h1 {
-    font-size: 35px !important;
-}
-
-h2 {
     font-size: 25px !important;
 }
 
-h3 {
+h2 {
     font-size: 20px !important;
 }
+
+h3 {
+    font-size: 18px !important;
+}
+
+h4, h5 {
+  font-size: 15px !important;
+}
+
 @media (max-width: 992px) {
   a {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
 
   p {
     font-size: 15px !important;
   }
-
-  h1 {
-    font-size: 35px !important;
-  }
-
-  h2 {
-    font-size: 30px !important;
-  }
-
-  h3 {
-    font-size: 22px !important;
-  }
 }
 
 .logo {
-  height: 40px;
+  height: 28px;
   padding-left: 25px;
 }
 
@@ -142,10 +135,12 @@ h3 {
   }
   .text-carousel {
     font-size: 40px !important;
+    color: white;
   }
 
   .titre-home {
     color: #FF8D17;
+    width: 35px;
   }
   
   @media (min-width: 40em) {
@@ -185,7 +180,6 @@ h3 {
 
 .game-pop {
   background-color: #272727;
-  height: 100vh;
   margin: 0px 40px;
 }
   .game-pop-h2 {
@@ -263,16 +257,23 @@ h3 {
   }
 
 /******* Add announces *********/
+
 .add-announces-main {
   min-height: 70vh;
 }
+
 .formulaire-add-announces {
-  width: 100%;
-  height: 50vh;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  margin: 30px 0px;
 }
+
+.formulaire-add-announces form {
+  width: 80%;
+}
+
 .title-add-announces{
   align-items: center;
   display: flex;
@@ -281,6 +282,22 @@ h3 {
 }
 .h1-add-announces {
   color: white;
+}
+
+.vich-image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.vich-image a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.vich-image a img {
+  width: 150px;
 }
 
 label {
@@ -293,6 +310,7 @@ form {
     flex-direction: column;
     justify-content: center;
 }
+
 .form-input-name {
   width: 80%;
   border: 0;
@@ -308,7 +326,6 @@ form {
 }
 
 .form-input-category {
-  width: 40%;
   border: 0;
   border-bottom: 2px solid gray;
   outline: 0;
@@ -316,7 +333,7 @@ form {
   color:white;
   padding: 7px 0;
   background: transparent;
-  height: 30px;
+  height: 35px;
   margin-left: 10px;
   margin-bottom: 30px;
 }
@@ -328,6 +345,7 @@ form {
 
 .input-form {
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .input-send {
@@ -350,4 +368,95 @@ form {
 
 #add_annonces_imageFile_file {
   color: white;
+  margin: 30px 0px;
 }
+
+#add_annonces_name, #add_annonces_category {
+  font-size: 15px;
+}
+
+#add_annonces_description {
+  border-radius: 10px;
+}
+
+#add_annonces_category {
+  background-color: #272727;
+}
+
+/********   VIDEO GAMES   **********/
+
+
+.section-videogame {
+  margin: 0px 100px;
+}
+
+@media (max-width: 992px) {
+  .section-videogame {
+    margin: 50px;
+  }
+}
+
+.title-videogame {
+  align-items: center;
+  display: flex;
+  height: 15vh;
+  margin: 0 40px;
+}
+
+.h1-videogame {
+  color: white;
+}
+
+.card {
+  background-color: #272727;
+  border: none;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+.card-img, .card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.card-title {
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  color: black;
+}
+
+.card-text {
+  width: 40%;
+  font-size: 13px;
+  margin: 0px;
+}
+
+.text-muted {
+  color: azure!important;
+  display: flex;
+  font-size: 13px;
+  justify-content: flex-end;
+}
+
+
+

@@ -2,27 +2,21 @@ version: '3.8'
 
 services:
 
-  php_8.2:
+  web:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: unless-stopped
     environment:
       DATABASE_URL: mysql://root:secret@database:3306/symfony_db?serverVersion=mariadb-10.9.4
-      APP_SECRET: 4af3fc3c7e43da2c6928e93391a81cab1aed
+      APP_SECRET: changeMe
       MAILER_DSN: smtp://:@mailcatcher:1025
       MESSENGER_TRANSPORT_DSN: doctrine://default
     ports:
       - "8001:80"
     volumes:
-      - ./config:/var/www/config
-      - ./src:/var/www/src
-      - ./templates:/var/www/templates
-      - ./tests:/var/www/tests
-      - ./translations:/var/www/translations
-      - ./public:/var/www/public
-      - ./public/build:/var/www/public/build
-      - ./public/images:/var/www/public/images
-      - ./migrations:/var/www/migrations
+      - ./:/var/www:cached
+    tty: true
     depends_on:
       - database
 
@@ -35,7 +29,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - db_data_dealsgames:/var/lib/mysql
+      - symfony_db_data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin
@@ -56,4 +50,4 @@ services:
       - "1025:1025"
 
 volumes:
-  db_data_dealsgames:
+  symfony_db_data:

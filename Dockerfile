@@ -5,15 +5,24 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Installation des extensions PHP nécessaires pour Symfony
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends locales apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev;
+    && apt-get install -y --no-install-recommends locales apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev wget unzip libmagickwand-dev;
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen
 
 RUN docker-php-ext-configure intl
-RUN docker-php-ext-install pdo pdo_mysql gd opcache intl zip calendar dom mbstring zip gd xsl
-RUN pecl install apcu && docker-php-ext-enable apcu
+RUN docker-php-ext-install pdo pdo_mysql gd opcache intl zip calendar dom mbstring zip xsl 
+RUN pecl install apcu imagick && docker-php-ext-enable apcu imagick
+
+# Installation de ZSH, Starship et FiraCode font
+RUN apt-get install -y zsh;
+RUN chsh -s /bin/zsh;
+RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
+RUN unzip FiraCode.zip -d ~/.fonts
+RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
+RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+
 
 # Configuration du serveur Apache
 COPY ./conf/apache.conf /etc/apache2/sites-available/apache.conf
@@ -24,16 +33,7 @@ RUN a2dissite 000-default.conf \
 # Copie des fichiers de l'application Symfony
 WORKDIR /var/www
 
-COPY . .
-
-COPY public/images /var/public/images
-
-RUN composer install \
-    && composer dump-autoload
-
-# Création des fichiers de cache et définition des permissions
-RUN chown -R www-data:www-data /var/www/var \
-    && chmod -R 777 /var/www/var
+# COPY . .
 
 # Exposition du port 80 pour Apache
 EXPOSE 80

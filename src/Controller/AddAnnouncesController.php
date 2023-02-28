@@ -21,7 +21,7 @@ class AddAnnouncesController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $announceRepository->save($announce);
+            $announceRepository->save($announce, true);
         }
         return $this->render('add_announces/index.html.twig', [
             'form'=> $form
