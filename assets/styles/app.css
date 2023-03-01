@@ -12,6 +12,7 @@ nav {
 
 main {
   margin-top: 6.8vh;
+  min-height: 70vh;
 }
 
 a {
@@ -19,7 +20,7 @@ a {
 }
 
 p {
-    font-size: 15px !important;
+    font-size: 13px !important;
 }
 
 h1 {
@@ -396,14 +397,12 @@ form {
   }
 }
 
-.title-videogame {
-  align-items: center;
+.category-title {
+  width: 100%;
   display: flex;
-  height: 15vh;
-  margin: 0 40px;
 }
 
-.h1-videogame {
+.category-h1 {
   color: white;
 }
 
@@ -426,6 +425,7 @@ form {
   border-bottom-right-radius: 15px;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .card-title {
@@ -436,7 +436,7 @@ form {
   width: 60%;
   display: flex;
   align-items: center;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
   margin: 0;
 }
@@ -447,7 +447,7 @@ p {
 
 .card-text {
   width: 40%;
-  font-size: 13px;
+  font-size: 12px;
   margin: 0px;
 }
 
@@ -455,8 +455,40 @@ p {
   color: azure!important;
   display: flex;
   font-size: 13px;
-  justify-content: flex-end;
+  justify-content: end;
 }
 
+.highlights-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  background-color: var(--color-very-dark);
+  overflow: hidden;
+  height: 60vh;
+  max-height: 620px;
+  min-height: 550px;
+  position: relative;
+  margin-bottom: 10px;
+}
 
+.parallax {
+  top: 0px;
+  bottom: 0px;
+}
 
+.header-top-gradient {
+  background: linear-gradient(#000,transparent);
+  opacity: .6;
+  top: 0;
+  width: 100%;
+  height: 110px;
+  z-index: 1;
+  content: "";
+  position: absolute;
+}
+
+.highlights-container.top-banner picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

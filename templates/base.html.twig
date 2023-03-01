@@ -30,13 +30,13 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_video_games') }}">Jeux video</a>
+        <a class="nav-link" href="{{path('app_category_show',{id:1}) }}">Jeux video</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_consoles') }}">Consoles</a>
+        <a class="nav-link" href="{{path('app_category_show',{id:2}) }}">Consoles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_accessories') }}">Accessoires</a>
+        <a class="nav-link" href="{{path('app_category_show',{id:3}) }}">Accessoires</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ path('app_resell') }}">Revendre</a>
@@ -75,13 +75,13 @@
             Products
           </h6>
           <p>
-            <a href="#!" class="text-reset">Jeux video</a>
+            <a href="{{path('app_category_show',{id:1}) }}" class="text-reset">Jeux video</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Consoles</a>
+            <a href="{{path('app_category_show',{id:2}) }}" class="text-reset">Consoles</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Accessoires</a>
+            <a href="{{path('app_category_show',{id:3}) }}" class="text-reset">Accessoires</a>
           </p>
           <p>
             <a href="#!" class="text-reset">Revendre</a>

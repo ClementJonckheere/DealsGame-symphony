@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriesController!{% endblock %}
+
+{% block body %}
+<main>
+    <div class="highlights-container top-banner">
+        <picture class="parallax" style="top: 0px; bottom: 0px;">
+        <div class="header-top-gradient"></div>
+        <img src="{{ asset('./images/Hogwarts-overlay.jpg')}}" alt="hagwards-legacy">
+        </picture>
+        <!-- <div class="content">
+        <span class="banner-title smaller">Destiny 2 : Éclipse + Pass Annuel</span>
+        <div class="numbers">
+        <span class="discount">-31%</span>
+        <span class="price">68.99€</span>
+        </div>
+        </div>
+        <a class="full-link" href="https://www.instant-gaming.com/fr/12728-acheter-destiny-2-eclipse-pass-annuel-pc-jeu-steam/" title="acheter Destiny 2 : Éclipse + Pass Annuel"></a> -->
+        </div>
+    <section class="section-videogame">
+        <div class="container">
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="category-title col-md-3 col-sm-6">
+                    <h1 class="category-h1">{{ category.name }}</h1>
+                    </div>
+                {% for announce in category.announces %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card mb-3">
+                            <a href="{{ path('app_details') }}"> 
+                                <img class="card-img-top" src="{{ vich_uploader_asset(announce) | imagine_filter('thumbnail')}}" alt="{{ announce.name }}">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-title"> {{ announce.name }}</p>
+                                <p class="card-text"><small class="text-muted">il y a 3 mois</small></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
