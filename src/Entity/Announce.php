@@ -42,6 +42,9 @@ class Announce
     #[Vich\UploadableField(mapping: 'announces', fileNameProperty: 'imageName')]
     private ?File $imageFile = null;
 
+    #[ORM\ManyToOne(inversedBy: 'Announces')]
+    private ?User $user = null;
+
     public function __construct()
     {
 
@@ -126,6 +129,18 @@ class Announce
     public function getImageFile(): ?File
     {
         return $this->imageFile;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
     }
 
 }
