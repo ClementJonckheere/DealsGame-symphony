@@ -4,20 +4,22 @@
 
 {% block body %}
 <main>
+    <div class="home-container">
     <div class="highlights-container top-banner">
         <picture class="parallax" style="top: 0px; bottom: 0px;">
         <div class="header-top-gradient"></div>
         <img src="{{ asset('./images/Hogwarts-overlay.jpg')}}" alt="hagwards-legacy">
         </picture>
-        <!-- <div class="content">
-        <span class="banner-title smaller">Destiny 2 : Éclipse + Pass Annuel</span>
-        <div class="numbers">
-        <span class="discount">-31%</span>
-        <span class="price">68.99€</span>
+        <div class="content">
+        <span class="banner-title">Hogwarts Legacy PC</span>
+        <div class="container-trend">
+        <p class="trend-new">New</p>
+        <span class="trend">Tendance du moment</span>
         </div>
         </div>
-        <a class="full-link" href="https://www.instant-gaming.com/fr/12728-acheter-destiny-2-eclipse-pass-annuel-pc-jeu-steam/" title="acheter Destiny 2 : Éclipse + Pass Annuel"></a> -->
+        <a class="full-link" href="{{ path('app_details') }}" title="Hogwarts Legacy PC"></a>
         </div>
+    </div>
     <section class="section-videogame">
         <div class="container">
             <div class="row d-flex justify-content-center mt-5">
@@ -32,7 +34,7 @@
                             </a>
                             <div class="card-body">
                                 <p class="card-title"> {{ announce.name }}</p>
-                                <p class="card-text"><small class="text-muted">il y a 3 mois</small></p>
+                                <p class="card-text"><small class="date-text">{{ announce.createdAt | date('d/m/Y')}} </small></p>
                             </div>
                         </div>
                     </div>
