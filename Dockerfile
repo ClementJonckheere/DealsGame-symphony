@@ -15,14 +15,6 @@ RUN docker-php-ext-configure intl
 RUN docker-php-ext-install pdo pdo_mysql gd opcache intl zip calendar dom mbstring zip xsl 
 RUN pecl install apcu imagick && docker-php-ext-enable apcu imagick
 
-# Installation de ZSH, Starship et FiraCode font
-RUN apt-get install -y zsh;
-RUN chsh -s /bin/zsh;
-RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
-RUN unzip FiraCode.zip -d ~/.fonts
-RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
-RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-
 
 # Configuration du serveur Apache
 COPY ./conf/apache.conf /etc/apache2/sites-available/apache.conf
@@ -30,10 +22,25 @@ RUN a2dissite 000-default.conf \
     && a2ensite apache.conf \
     && a2enmod rewrite
 
+# Installation de ZSH, Starship et FiraCode font
+RUN apt-get install -y zsh;
+RUN chsh -s /bin/zsh;
+RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
+
+# Création d'un utilisateur apache qui sera désigner comme utilisateur par défault pour exécuter les cmd
+RUN userdel www-data && useradd -ms /bin/sh www-data
+USER www-data
+
+
+RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
+RUN unzip FiraCode.zip -d ~/.fonts
+RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+
 # Copie des fichiers de l'application Symfony
 WORKDIR /var/www
 
 # COPY . .
+COPY --chown=www-data:www-data . .
 
 # Exposition du port 80 pour Apache
 EXPOSE 80

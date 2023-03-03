@@ -3,7 +3,12 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+<div class="formulaire-register">
+    <div class="title-add-announces">
+        <h1 class="h1-add-announces">Creation d'un compte</h1>
+    </div>
 <form method="post">
+
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -13,7 +18,7 @@
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
-
+    <div class="formulaire-add-announces">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
@@ -38,5 +43,10 @@
     <button class="btn btn-lg btn-primary" type="submit">
         Sign in
     </button>
+</div>
+<div class="link-navigate">
+    <a href="{{ path('app_register')}}">S'inscrire</a>
+    <a href="{{ path('app_forgot_password_request')}}">Mot de passe oublié ?</a>
+</div>  
 </form>
 {% endblock %}

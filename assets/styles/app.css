@@ -62,7 +62,10 @@ h4, h5 {
       background-color: #FF8D17;
       border-radius: 5px;
   }
-    .connexion-link:hover {
+  .connexion-item .connexion-link:hover {
+      color: white !important;
+    } 
+    .text-connexion {
       color: white !important;
     }
 
@@ -281,6 +284,7 @@ h4, h5 {
   align-items: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   margin: 30px 0px;
 }
@@ -329,7 +333,7 @@ form {
 .form-input-name {
   width: 80%;
   border: 0;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid #FF8D17;
   outline: 0;
   font-size: 1.3rem;
   color:white;
@@ -342,10 +346,10 @@ form {
 
 .form-input-category {
   border: 0;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid #FF8D17;
   outline: 0;
   font-size: 1.3rem;
-  color:white;
+  color: white;
   padding: 7px 0;
   background: transparent;
   height: 35px;
@@ -356,6 +360,14 @@ form {
 .row-form-addannounce {
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 700px) {
+
+  .row-form-addannounce {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 
 .input-form {
@@ -607,4 +619,54 @@ form {
 .date-text {
   display: flex;
   justify-content: end;
+}
+
+
+/**** REGISTER ****/
+
+.formulaire-register form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-label {
+  width: 350px;
+}
+
+.register-btn {
+  width: 200px;
+}
+
+#registration_form_fullname, #registration_form_email, #registration_form_plainPassword {
+  background: transparent;
+    border: 0;
+    border-bottom: 2px solid #FF8D17;
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    outline: 0;
+    padding: 7px 0;
+    width: 350px;
+}
+
+#add_annonces_description {
+  border: 2px solid #FF8D17;
+}
+
+@media (max-width: 500px) {
+
+  #registration_form_fullname, #registration_form_email, #registration_form_plainPassword {
+    width: 225px;
+  }
+
+  .container-label {
+    width: 225px;
+  }
+}
+
+.alert {
+  margin-top: 80px;
 }

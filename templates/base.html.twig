@@ -41,9 +41,18 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ path('app_resell') }}">Revendre</a>
       </li>
+      {% if is_granted('IS_AUTHENTICATED') %}
+        <li class="nav-item connexion-item">
+          <a class="nav-link connexion-link" href="{{ path('app_logout') }}">Deconnexion</a>
+        </li>
+      {% else %}
       <li class="nav-item connexion-item">
-        <a class="nav-link connexion-link" href="">Connexion | <img src="{{ asset('images/inscription.png')}}" alt="icon d'inscription" class="inscription-icon"/></a>
+        <a class="nav-link connexion-link" href="{{ path('app_register') }}">Inscription</a>
       </li>
+      <li class="nav-item connexion-item">
+        <a class="nav-link connexion-link" href="{{ path('app_login') }}">Connexion</a>
+      </li>
+      {% endif %}
     </ul>
   </div>
 

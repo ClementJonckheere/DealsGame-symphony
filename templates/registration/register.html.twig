@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+<main>
+<div class="formulaire-register">
+    <div class="title-add-announces">
+        <h1 class="h1-add-announces">Creation d'un compte</h1>
+    </div>
+    <div class="formulaire-add-announces">
+        {{ form_start(registrationForm) }}
+        <div class="container-label">
+            <div class="label-form">
+            {{ form_label(registrationForm.fullname, null,{
+                label: 'Nom',
+                label_attr: {'class': 'form-label'}
+            }) }}
+            </div>
+        </div>
+            <div class="input-form d-flex justify-content-center">
+                {{ form_widget(registrationForm.fullname, {
+                    label_attr: {'class': 'form-input-name'}
+                }) }}
+            </div>
+            <div class="container-label">
+            <div class="label-form">
+            {{ form_label(registrationForm.email, null, {
+                label: 'Adresse Email',
+                label_attr: {'class': 'form-label'}
+            }) }}
+            </div>
+            </div>
+            <div class="input-form d-flex justify-content-center">
+                {{ form_widget(registrationForm.email, {
+                    label_attr: {'class': 'form-input-name'}
+                }) }}
+            </div>
+            <div class="container-label">
+            <div class="label-form">
+            {{ form_label(registrationForm.plainPassword, null,{
+                label: 'Mot de passe',
+                label_attr: {'class': 'form-label'}
+            }) }}
+            </div>
+            </div>
+            <div class="input-form d-flex justify-content-center">
+                {{ form_widget(registrationForm.plainPassword, {
+                    label_attr: {'class': 'form-input-name'}
+                }) }}
+            </div>
+            <div class="label-form">
+            {{ form_row(registrationForm.agreeTerms, {
+                label: 'Accepter les termes',
+                label_attr: {'class': 'form-label me-3'}
+            }) }}
+            </div>
+            <button type="submit" class="btn register-btn mt-4 mb-5">Register</button>
+        {{ form_end(registrationForm) }}
+</div>
+</main>
+
+{% endblock %}
+
+
