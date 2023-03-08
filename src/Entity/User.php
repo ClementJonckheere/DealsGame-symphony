@@ -39,14 +39,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $fullname = null;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Announce::class)]
-    private Collection $Announces;
+    private Collection $announces;
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
     public function __construct()
     {
-        $this->Announces = new ArrayCollection();
+        $this->announces = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -136,13 +136,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getAnnounces(): Collection
     {
-        return $this->Announces;
+        return $this->announces;
     }
 
     public function addAnnounce(Announce $announce): self
     {
-        if (!$this->Announces->contains($announce)) {
-            $this->Announces->add($announce);
+        if (!$this->announces->contains($announce)) {
+            $this->announces->add($announce);
             $announce->setUser($this);
         }
 
@@ -151,7 +151,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function removeAnnounce(Announce $announce): self
     {
-        if ($this->Announces->removeElement($announce)) {
+        if ($this->announces->removeElement($announce)) {
             // set the owning side to null (unless already changed)
             if ($announce->getUser() === $this) {
                 $announce->setUser(null);

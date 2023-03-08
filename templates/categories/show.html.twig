@@ -17,7 +17,7 @@
         <span class="trend">Tendance du moment</span>
         </div>
         </div>
-        <a class="full-link" href="{{ path('app_details') }}" title="Hogwarts Legacy PC"></a>
+        <a class="full-link" href="#" title="Hogwarts Legacy PC"></a>
         </div>
     </div>
     <section class="section-videogame">
@@ -29,12 +29,12 @@
                 {% for announce in category.announces %}
                     <div class="col-md-3 col-sm-6">
                         <div class="card mb-3">
-                            <a href="{{ path('app_details') }}"> 
+                            <a href="{{ path('app_details_show', { 'id': announce.id }) }}"> 
                                 <img class="card-img-top" src="{{ vich_uploader_asset(announce) | imagine_filter('thumbnail')}}" alt="{{ announce.name }}">
                             </a>
                             <div class="card-body">
                                 <p class="card-title"> {{ announce.name }}</p>
-                                <p class="card-text"><small class="date-text">{{ announce.createdAt | date('d/m/Y')}} </small></p>
+                                <p class="card-text"><small class="date-text">{{ announce.createdAt | ago(locale='fr') }} </small></p>
                             </div>
                         </div>
                     </div>

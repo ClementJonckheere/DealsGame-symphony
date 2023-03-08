@@ -22,6 +22,7 @@ a {
 p {
     font-size: 13px !important;
     color: white;
+    line-height: 22px;
 }
 
 h1 {
@@ -133,7 +134,7 @@ h4, h5 {
     z-index: 10;
   }
   .carousel-item {
-    height: 50rem;
+    height: 53rem;
     background: linear-gradient( 0deg, rgb(25 24 24) 2%, rgb(25 24 24 / 70%) 25%);
   }
   .carousel-item > img {
@@ -669,4 +670,40 @@ form {
 
 .alert {
   margin-top: 80px;
+}
+
+
+/**** PAGE DETAILS ***/
+
+.img-details {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.category-picture {
+  width: 40%;
+}
+
+.category-title-contact {
+  width: 60%;
+}
+
+.title-category, .description-category, .container-category {
+  color: white;
+}
+
+.btn-contact {
+  background-color: #ff8d17;
+  border-radius: 5px;
+  color: white;
+  width: 120px;
+}
+
+.revender-category {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-revender {
+  color: white;
 }
