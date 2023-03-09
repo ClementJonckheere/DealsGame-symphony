@@ -35,6 +35,9 @@
                             <div class="card-body">
                                 <p class="card-title"> {{ announce.name }}</p>
                                 <p class="card-text"><small class="date-text">{{ announce.createdAt | ago(locale='fr') }} </small></p>
+                                {{ dump(announces) }}
+                                    {% if is_granted('ANNOUNCE_MANAGE')%}
+                                        <a href="">Supprimer</a>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Announce;
 use App\Entity\Category;
+use App\Repository\AnnounceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
