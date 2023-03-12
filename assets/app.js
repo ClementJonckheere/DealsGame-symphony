@@ -10,3 +10,14 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+const nav = document.querySelector('nav');
+const navOffsetTop = nav.offsetTop;
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > navOffsetTop) {
+    nav.classList.add('transparent');
+  } else {
+    nav.classList.remove('transparent');
+  }
+});

@@ -15,20 +15,26 @@
         <div class="title-my-announces">
             <h2 class="h2-resell">Mes annonces</h2>
         </div>
+        <div class="container">
+            <div class="row">
         {% for announce in app.user.announces %}
-            <div class="col-md-3 col-sm-6">
+            <div class="card-contener col-md-3 col-sm-6">
                 <div class="card mb-3">
                     <a href="{{ path('app_details_show', { 'id': announce.id }) }}"> 
                         <img class="card-img-top" src="{{ vich_uploader_asset(announce) | imagine_filter('thumbnail')}}" alt="{{ announce.name }}">
                     </a>
-                    <div class="card-body">
-                        <p class="card-title"> {{ announce.name }}</p>
-                        <p class="card-text"><small class="date-text">{{ announce.createdAt | ago(locale='fr') }} </small></p>
-                            <a class="suppr-btn" href="{{ path('app_announce_delete') }}">Supprimer</a>
-                    </div>
+                        <div class="content-card d-flex">
+                            <p class="card-title"> {{ announce.name }}</p>
+                            <p class="card-text"><small class="date-text">{{ announce.createdAt | ago(locale='fr') }} </small></p>
+                        </div>
+                        <div class="delete d-flex">
+                            <a class="suppr-btn" href="{{ path('app_announce_delete', { 'id': announce.id }) }}">Supprimer</a>
+                        </div>
                 </div>
             </div>
         {% endfor %}
+    </div>
+    </div>
     </section>
 </main>
 {% endblock %}

@@ -6,12 +6,11 @@ body {
 }
 
 nav {
-    background-color: #191818;
+  background-color: #191818;
 
 }
 
 main {
-  margin-top: 5vh;
   min-height: 70vh;
   margin-bottom: 5vh;
 }
@@ -57,6 +56,18 @@ h4, h5 {
   padding-left: 25px;
 }
 
+
+.a-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.img-icon {
+  width: 30px;
+}
+
 .inscription-icon {
   width: 1.5em;
 }
@@ -77,6 +88,11 @@ h4, h5 {
   .nav-link:hover {
   color: #FF8D17 !important;
 }
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  font-weight: 800;
+}
+
 .btn {
   background-color: #FF8D17 !important;
   border: #FF8D17;
@@ -135,7 +151,7 @@ h4, h5 {
     z-index: 10;
   }
   .carousel-item {
-    height: 53rem;
+    height: 56rem;
     background: linear-gradient( 0deg, rgb(25 24 24) 2%, rgb(25 24 24 / 70%) 25%);
   }
   .carousel-item > img {
@@ -232,6 +248,7 @@ h4, h5 {
 /************* RESELL ************/
 .resell-main {
   width: 100%;
+  margin-top: 5vh;
 }
 .title-resell {
   height: 15vh;
@@ -378,7 +395,7 @@ form {
 }
 
 .input-send {
-  width: 25%;
+  width: 100px;
   background-color: #FF8D17;
   color: white;
   border-radius: 5px;
@@ -414,7 +431,11 @@ form {
 
 
 
-/********   VIDEO GAMES   **********/
+/********   DETAILS   **********/
+
+.main-details, .main-profil {
+  margin-top: 5vh;
+}
 
 .highlights-container {
   background-repeat: no-repeat;
@@ -423,8 +444,7 @@ form {
   background-color: var(--color-very-dark);
   overflow: hidden;
   height: 60vh;
-  max-height: 300px;
-  min-height: 300px;
+  max-height: 350px;
   position: relative;
   margin-bottom: 10px;
 }
@@ -522,18 +542,7 @@ form {
   flex-direction: column;
 }
 
-.trend-new {
-  background-color: #ff8d17;
-  color: #fff;
-  font-weight: 700;
-  padding: 6px 6px 5px 7px;
-  position: absolute;
-  z-index: 2;
-  border-radius: 10px;
-}
-
 .trend {
-  margin-left: 45px;
   font-size: 20px;
 }
 
@@ -564,6 +573,7 @@ form {
 .category-title {
   width: 100%;
   display: flex;
+  margin-bottom: 30px;
 }
 
 .category-h1 {
@@ -592,6 +602,11 @@ form {
   cursor: pointer;
 }
 
+.card-img-top:hover {
+    transform: scale(1.1);
+}
+
+
 .card-title {
   color: #fff;
   overflow: hidden;
@@ -603,6 +618,7 @@ form {
   font-size: 12px;
   font-weight: bold;
   margin: 0;
+  margin-top: 4px;
 }
 
 .card-text {
@@ -621,6 +637,7 @@ form {
 .date-text {
   display: flex;
   justify-content: end;
+  margin-top: 4px;
 }
 
 
@@ -699,6 +716,8 @@ form {
   color: white;
 }
 
+
+
 .btn-contact {
   background-color: #ff8d17;
   border-radius: 5px;
@@ -761,4 +780,15 @@ form {
 .suppr-btn {
   background-color: white;
   color: black;
+}
+
+
+/***** PROFIL *****/
+
+.h1-profil, .label-profil, .input-profil {
+  color: #fff;
+}
+
+.container-label {
+  display: flex;
 }

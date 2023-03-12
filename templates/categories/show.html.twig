@@ -13,7 +13,6 @@
         <div class="content">
         <span class="banner-title">Hogwarts Legacy PC</span>
         <div class="container-trend">
-        <p class="trend-new">New</p>
         <span class="trend">Tendance du moment</span>
         </div>
         </div>
@@ -27,7 +26,7 @@
                     <h1 class="category-h1">{{ category.name }}</h1>
                     </div>
                 {% for announce in category.announces %}
-                    <div class="col-md-3 col-sm-6">
+                    <div class="card-contener col-md-3 col-sm-6">
                         <div class="card mb-3">
                             <a href="{{ path('app_details_show', { 'id': announce.id }) }}"> 
                                 <img class="card-img-top" src="{{ vich_uploader_asset(announce) | imagine_filter('thumbnail')}}" alt="{{ announce.name }}">
@@ -35,9 +34,6 @@
                             <div class="card-body">
                                 <p class="card-title"> {{ announce.name }}</p>
                                 <p class="card-text"><small class="date-text">{{ announce.createdAt | ago(locale='fr') }} </small></p>
-                                {{ dump(announces) }}
-                                    {% if is_granted('ANNOUNCE_MANAGE')%}
-                                        <a href="">Supprimer</a>
                             </div>
                         </div>
                     </div>
