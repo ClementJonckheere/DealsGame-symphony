@@ -778,8 +778,9 @@ form {
 }
 
 .suppr-btn {
-  background-color: white;
+  background-color: white !important;
   color: black;
+  text-decoration: none;
 }
 
 
@@ -789,6 +790,81 @@ form {
   color: #fff;
 }
 
+.container-profil {
+  margin-left: 40px;
+}
+
 .container-label {
   display: flex;
 }
+
+.date-profil, .container-label  {
+  margin-bottom: 15px;
+}
+
+.btn-profil {
+  border: none;
+  background-color: #FF8D17;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn-profil:hover {
+  background-color: #F6BA7C;
+}
+
+
+.title-profil {
+    align-items: center;
+    display: flex;
+    height: 15vh;
+    margin: 0 40px;
+}
+
+.date-profil {
+  color: white;
+  margin-left: 40px;
+}
+
+.title-card-profil, .text-card-profil {
+  color: black;
+  margin-left: 10px;
+}
+
+.liens-help {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 40vh;
+  align-items: center;
+}
+
+.liens-profil {
+  height: 150px;
+  width: 320px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  text-decoration: none;
+}
+
+.liens-profil:hover {
+  background-color: #dadada;
+}
+
+.img-container {
+  width: 30%;
+  margin-left: 15px;
+}
+
+.img-profil {
+  width: 65px;
+}
+
+@media (max-width: 992px) {
+  .liens-help {
+    flex-direction: column;
+  }
+}
+

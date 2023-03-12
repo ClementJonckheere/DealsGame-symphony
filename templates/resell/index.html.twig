@@ -28,7 +28,7 @@
                             <p class="card-text"><small class="date-text">{{ announce.createdAt | ago(locale='fr') }} </small></p>
                         </div>
                         <div class="delete d-flex">
-                            <a class="suppr-btn" href="{{ path('app_announce_delete', { 'id': announce.id }) }}">Supprimer</a>
+                            <a class="btn suppr-btn" href="{{ path('app_announce_delete', { 'id': announce.id }) }}">Supprimer</a>
                         </div>
                 </div>
             </div>

@@ -8,6 +8,9 @@
     <div class="title-profil">
         <h1 class="h1-profil">Votre profil</h1>
     </div>
+    <div class="date-profil">
+        Votre compte a été créé {{ app.user.createdAt | ago(locale='fr') }}
+    </div>
     <div class="container-profil">
         <div class="container-label">
             <div class="label-profil">Nom :</div>
@@ -17,10 +20,38 @@
             <div class="label-profil">Email :</div>
             <div class="input-profil">{{ app.user.email }}</div>
         </div>
-        <div class="container-label">
-            <div class="label-profil"> :</div>
-            <div class="input-profil">{{ app.user.fullname }}</div>
-        </div>
+        <button class="btn btn-profil">
+            Modifier le profil
+        </button>
     </div>
+    <section class="liens-help">
+        <a class="liens-profil" href="{{ path('app_resell') }}">
+            <div class="img-container">
+                <img class="img-profil" src="{{ asset('./images/megaphone.png')}}" alt="icon-commande">
+            </div>
+            <div class="body-card">
+                <h2 class="title-card-profil">Vos annonces</h2>
+                <p class="text-card-profil">Ajouter, modifier ou supprimer des annonces</p>
+            </div>
+        </a>
+        <a class="liens-profil" href="{{ path('app_resell') }}">
+            <div class="img-container">
+                <img class="img-profil" src="{{ asset('./images/soutien-technique.png')}}" alt="icon-contact">
+            </div>
+            <div class="body-card">
+                <h2 class="title-card-profil">Nous contacter</h2>
+                <p class="text-card-profil">Contacter notre service client par téléphone, chat ou email</p>
+            </div>
+        </a>
+        <a class="liens-profil" href="{{ path('app_resell') }}">
+            <div class="img-container">
+                <img class="img-profil" src="{{ asset('./images/icone-de-messagerie.png')}}" alt="icon-messagerie">
+            </div>
+            <div class="body-card">
+                <h2 class="title-card-profil">Messagerie</h2>
+                <p class="text-card-profil">Consulter votre messagerie</p>  
+            </div>
+        </a>
+    </section>
 </main>
 {% endblock %}
